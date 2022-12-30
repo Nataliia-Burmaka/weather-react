@@ -1,0 +1,70 @@
+.search-control {
+  width: 100%;
+  border: none;
+  background-color: #1687a7;
+  border-radius: 50px;
+  height: 35px;
+  padding: 0 20px;
+  outline: none;
+  color: #fff;
+}
+
+.search-control::placeholder {
+  color: #fff;
+}
+
+.btn {
+  height: 35px;
+  width: 160px;
+  border: none;
+  border-radius: 2px;
+}
+
+.btn-primary {
+  background-color: #1687a7;
+  color: #fff;
+}
+
+.btn-transparent {
+  background-color: #fff;
+  color: #1687a7;
+}
+.Weather {
+  color: #1687a7;
+}
+
+.row {
+  padding: 40px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.Weather .units {
+  color: #1687a7;
+  position: relative;
+  font-size: medium;
+  top: -25px;
+  font-size: 18px;
+}
+.Weather .units .active {
+  cursor: default;
+}
+.humidity,
+.dayTime {
+  font-size: 28px;
+}
+.wind,
+.weatherCondition {
+  font-size: 20px;
+}
+
+.cloud {
+  margin-left: -10px;
+  top: -15px;
+}
+.col-4 div {
+  margin-bottom: 16px;
+}
