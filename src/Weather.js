@@ -49,6 +49,15 @@ export default function Weather() {
           </div>
         </div>
       </div>
+      <div>
+        <p className="myGit">
+          <a href="https://github.com/Nataliia-Burmaka/weather-react">
+            {" "}
+            Open-source code,
+          </a>
+          by Nataliia Burmaka{" "}
+        </p>
+      </div>
     </div>
   );
 }

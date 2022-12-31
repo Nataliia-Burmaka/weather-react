@@ -68,3 +68,8 @@ h1 {
 .col-4 div {
   margin-bottom: 16px;
 }
+.myGit {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
