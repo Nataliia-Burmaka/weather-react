@@ -30,35 +30,81 @@ export default function SearchWeather(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
+  function getCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(geoPosition);
+  }
 
+  function geoPosition(position) {
+    const apiKey = "1a6432c5ca7b6f9b0bee45c98d54ea71";
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleLink(event) {
+    event.preventDefault();
+    setCity(event.target.innerText);
+    search();
+  }
   if (weatherData.ready) {
     return (
-      <div className="search-form">
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="form-group">
+      <div>
+        <ul class="menu">
+          <li class="city">
+            <a href="/" class="nav-link" onClick={handleLink}>
+              Kyiv
+            </a>
+          </li>
+          <li class="city">
+            <a href="/" class="nav-link" onClick={handleLink}>
+              Paris
+            </a>
+          </li>
+          <li class="city">
+            <a href="/" class="nav-link" onClick={handleLink}>
+              Helsinki
+            </a>
+          </li>
+          <li class="city">
+            <a href="/" class="nav-link" onClick={handleLink}>
+              Hurghada
+            </a>
+          </li>
+        </ul>
+        ;
+        <div className="search-form">
+          <form onSubmit={handleSubmit}>
+            <div className="row">
+              <div className="col-md-6">
+                <div className="form-group">
+                  <input
+                    type="search"
+                    className="search-control"
+                    placeholder="Choose your location"
+                    id="enterCity"
+                    autoFocus="on"
+                    onChange={handleCityChange}
+                  />
+                </div>
+              </div>
+              <div className="col-md-4 offset-2">
                 <input
-                  type="search"
-                  className="search-control"
-                  placeholder="Choose your location"
-                  id="enterCity"
-                  autoFocus="on"
-                  onChange={handleCityChange}
+                  type="submit"
+                  className="btn btn-primary"
+                  value="Search"
+                />
+                <input
+                  type="button"
+                  className="btn btn-transparent"
+                  value="Current"
+                  onClick={getCurrentLocation}
                 />
               </div>
             </div>
-            <div className="col-md-4 offset-2">
-              <input type="submit" className="btn btn-primary" value="Search" />
-              <input
-                type="button"
-                className="btn btn-transparent"
-                value="Current"
-              />
-            </div>
-          </div>
-        </form>
-        <Weather data={weatherData} />
+          </form>
+          <Weather data={weatherData} />
+        </div>
       </div>
     );
   } else {
