@@ -10,3 +10,8 @@ body {
   background-size: cover;
   position: relative;
 }
+.myGit {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}

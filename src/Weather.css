@@ -29,7 +29,7 @@
   background-color: #fff;
   color: #1687a7;
 }
-.Weather {
+.WeatherInfo {
   color: #1687a7;
 }
 
@@ -59,17 +59,14 @@ h1 {
 .wind,
 .weatherCondition {
   font-size: 20px;
+  
 }
 
 .cloud {
   margin-left: -10px;
   top: -15px;
 }
-.col-4 div {
+ .col-8, col-4 div {
   margin-bottom: 16px;
 }
-.myGit {
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-}
+
