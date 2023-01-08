@@ -65,6 +65,8 @@ h1 {
 .cloud {
   margin-left: -10px;
   top: -15px;
+  color:darkslategrey;
+  display: inline-block;
 }
  .col-8, col-4 div {
   margin-bottom: 16px;
