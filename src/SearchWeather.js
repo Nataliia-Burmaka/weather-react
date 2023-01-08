@@ -7,17 +7,17 @@ export default function SearchWeather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-      setWeatherData({
-        ready: true,
-        temperature: response.data.main.temp,
-        humidity: response.data.main.humidity,
-        wind: response.data.wind.speed,
-        date: new Date(response.data.dt * 1000),
-        icon: response.data.weather[0].icon,
-        city: response.data.name,
-        description: response.data.weather[0].description,
-      });
-  } 
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
+      icon: response.data.weather[0].icon,
+      city: response.data.name,
+      description: response.data.weather[0].description,
+    });
+  }
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -30,10 +30,10 @@ export default function SearchWeather(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
- 
+
   if (weatherData.ready) {
     return (
-      <div className = "search-form">
+      <div className="search-form">
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-6">
@@ -49,7 +49,7 @@ export default function SearchWeather(props) {
               </div>
             </div>
             <div className="col-md-4 offset-2">
-              <input type="submit" className="btn btn-primary" value="search" />
+              <input type="submit" className="btn btn-primary" value="Search" />
               <input
                 type="button"
                 className="btn btn-transparent"

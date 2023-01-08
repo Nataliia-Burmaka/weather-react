@@ -42,14 +42,14 @@ h1 {
   font-size: 60px;
 }
 
-.Weather .units {
+.units {
   color: #1687a7;
   position: relative;
   font-size: medium;
   top: -25px;
   font-size: 18px;
 }
-.Weather .units .active {
+.WeatherTemperature .units .active {
   cursor: default;
 }
 .humidity,
@@ -59,16 +59,15 @@ h1 {
 .wind,
 .weatherCondition {
   font-size: 20px;
-  
 }
 
 .cloud {
   margin-left: -10px;
   top: -15px;
-  color:darkslategrey;
+  color: darkslategrey;
   display: inline-block;
 }
- .col-8, col-4 div {
+.col-8,
+col-4 div {
   margin-bottom: 16px;
 }
-
