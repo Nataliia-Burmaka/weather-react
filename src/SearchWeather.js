@@ -20,12 +20,12 @@ export default function SearchWeather(props) {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    search(city);
   }
   function handleCityChange(event) {
     setCity(event.target.value);
   }
-  function search() {
+  function search(city) {
     const apiKey = "1a6432c5ca7b6f9b0bee45c98d54ea71";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
@@ -45,7 +45,7 @@ export default function SearchWeather(props) {
   function handleLink(event) {
     event.preventDefault();
     setCity(event.target.innerText);
-    search();
+    search(event.target.innerText);
   }
   if (weatherData.ready) {
     return (
@@ -108,7 +108,7 @@ export default function SearchWeather(props) {
       </div>
     );
   } else {
-    search();
+    search(props.defaultCity);
     return "Loading...";
   }
 }
