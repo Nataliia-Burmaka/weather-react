@@ -8,7 +8,11 @@ export default function App() {
         <SearchWeather defaultCity="Jyvaskyla" />
         <div>
           <p className="myGit">
-            <a href="https://github.com/Nataliia-Burmaka/weather-react">
+            <a
+              href="https://github.com/Nataliia-Burmaka/weather-react"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {" "}
               Open-source code,
             </a>

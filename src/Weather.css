@@ -44,7 +44,7 @@
   background-color: #fff;
   color: #1687a7;
 }
-.WeatherInfo {
+.WeatherInfo-container {
   color: #1687a7;
 }
 
@@ -54,7 +54,7 @@
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 55px;
 }
 
 .units {
@@ -64,25 +64,65 @@ h1 {
   top: -25px;
   font-size: 18px;
 }
-.WeatherTemperature .units .active {
-  cursor: default;
-}
-.humidity,
-.dayTime {
+
+.Humidity,
+.DayTime {
   font-size: 28px;
 }
-.wind,
-.weatherCondition {
+.Wind,
+.WeatherCondition {
   font-size: 20px;
 }
 
-.cloud {
+.Cloud {
   margin-left: -10px;
   top: -15px;
   color: darkslategrey;
   display: inline-block;
 }
-.col-8,
-col-4 div {
-  margin-bottom: 16px;
+
+hr {
+  border-top-width: 3px !important;
+  color: darkslategray !important;
+  opacity: 0.5 !important;
+}
+@media (max-width: 950px) {
+  h1 {
+    font-size: 40px;
+    line-height: 45px;
+  }
+}
+@media (max-width: 800px) {
+  .Humidity,
+  .DayTime {
+    font-size: 20px;
+  }
+  .WeatherInfo-container,
+  .Cloud {
+    padding: 0px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    display: none;
+  }
+  .btn {
+    margin: 5px auto;
+    height: 30px;
+    width: 100px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-control::placeholder {
+    color: transparent;
+  }
 }
